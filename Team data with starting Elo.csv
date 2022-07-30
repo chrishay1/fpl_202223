@@ -1,0 +1,99 @@
+team_name,team,Season,fixed_name,Elo_name,UCL_Flag,EL_Flag,ECL_Flag,Europe_flag,Promoted_flag,Final_position,team_elo
+Arsenal,1,2122,Arsenal,Arsenal,0,0,0,0,0,5,1866.67456055
+Aston Villa,2,2122,Aston Villa,AstonVilla,0,0,0,0,0,14,1747.11230469
+Brentford,3,2122,Brentford,Brentford,0,0,0,0,1,13,1671.97888184
+Brighton,4,2122,Brighton,Brighton,0,0,0,0,0,9,1720.88342285
+Burnley,5,2122,Burnley,Burnley,0,0,0,0,0,18,1709.37329102
+Chelsea,6,2122,Chelsea,Chelsea,1,0,0,1,0,3,1923.20202637
+Crystal Palace,7,2122,Crystal Palace,CrystalPalace,0,0,0,0,0,12,1693.30944824
+Everton,8,2122,Everton,Everton,0,0,0,0,0,16,1771.19372559
+Leeds Utd,9,2122,Leeds Utd,Leeds,0,0,0,0,0,17,1783.74121094
+Leicester,10,2122,Leicester,Leicester,0,1,1,1,0,8,1801.89501953
+Liverpool,11,2122,Liverpool,Liverpool,1,0,0,1,0,2,1940.19763184
+Man City,12,2122,Man City,ManCity,1,0,0,1,0,1,2012.76818848
+Man Utd,13,2122,Man Utd,ManUnited,1,0,0,1,0,6,1925.87194824
+Newcastle,14,2122,Newcastle,Newcastle,0,0,0,0,0,11,1724.89587402
+Southampton,16,2122,Southampton,Southampton,0,0,0,0,0,15,1700.75109863
+Tottenham,17,2122,Tottenham,Tottenham,0,0,1,1,0,4,1831.75012207
+Watford,18,2122,Watford,Watford,0,0,0,0,1,19,1673.33557129
+West Ham,19,2122,West Ham,WestHam,0,1,0,1,0,7,1810.99633789
+Wolves,20,2122,Wolves,Wolves,0,0,0,0,0,10,1738.54443359
+Arsenal,1,2021,Arsenal,Arsenal,0,1,0,1,0,8,1799.52392578
+Aston Villa,2,2021,Aston Villa,AstonVilla,0,0,0,0,0,11,1618.25402832
+Brighton,3,2021,Brighton,Brighton,0,0,0,0,0,16,1653.63110352
+Burnley,4,2021,Burnley,Burnley,0,0,0,0,0,17,1722.70275879
+Chelsea,5,2021,Chelsea,Chelsea,1,0,0,1,0,4,1818.56286621
+Crystal Palace,6,2021,Crystal Palace,CrystalPalace,0,0,0,0,0,14,1673.68884277
+Everton,7,2021,Everton,Everton,0,0,0,0,0,10,1715.9395752
+Fulham,8,2021,Fulham,Fulham,0,0,0,0,1,18,1591.54626465
+Leeds Utd,9,2021,Leeds Utd,Leeds,0,0,0,0,1,9,1624.62426758
+Leicester,10,2021,Leicester,Leicester,0,1,0,1,0,5,1757.98510742
+Liverpool,11,2021,Liverpool,Liverpool,1,0,0,1,0,3,1991.63098145
+Man City,12,2021,Man City,ManCity,1,0,0,1,0,1,1967.77905273
+Man Utd,13,2021,Man Utd,ManUnited,1,1,0,1,0,2,1860.72937012
+Newcastle,14,2021,Newcastle,Newcastle,0,0,0,0,0,12,1677.56347656
+Sheffield Utd,15,2021,Sheffield Utd,SheffieldUnited,0,0,0,0,0,20,1693.6763916
+Southampton,16,2021,Southampton,Southampton,0,0,0,0,0,15,1720.21118164
+Tottenham,17,2021,Tottenham,Tottenham,0,1,0,1,0,7,1807.71264648
+West Brom,18,2021,West Brom,WestBrom,0,0,0,0,1,19,1593.79064941
+West Ham,19,2021,West Ham,WestHam,0,0,0,0,0,6,1685.76428223
+Wolves,20,2021,Wolves,Wolves,0,0,0,0,0,13,1778.44799805
+Arsenal,1,1920,Arsenal,Arsenal,0,1,0,1,0,8,1870.89367676
+Aston Villa,2,1920,Aston Villa,AstonVilla,0,0,0,0,1,17,1616.2142334
+Bournemouth,3,1920,Bournemouth,Bournemouth,0,0,0,0,0,18,1694.90454102
+Brighton,4,1920,Brighton,Brighton,0,0,0,0,0,15,1620.26965332
+Burnley,5,1920,Burnley,Burnley,0,0,0,0,0,10,1685.67358398
+Chelsea,6,1920,Chelsea,Chelsea,1,0,0,1,0,4,1887.0135498
+Crystal Palace,7,1920,Crystal Palace,CrystalPalace,0,0,0,0,0,14,1746.54309082
+Everton,8,1920,Everton,Everton,0,0,0,0,0,12,1773.67272949
+Leicester,9,1920,Leicester,Leicester,0,0,0,0,0,5,1742.68151855
+Liverpool,10,1920,Liverpool,Liverpool,1,0,0,1,0,1,2050.23095703
+Man City,11,1920,Man City,ManCity,1,0,0,1,0,2,2041.28271484
+Man Utd,12,1920,Man Utd,ManUnited,0,1,0,1,0,3,1842.23632812
+Newcastle,13,1920,Newcastle,Newcastle,0,0,0,0,0,13,1719.5970459
+Norwich,14,1920,Norwich,Norwich,0,0,0,0,1,20,1634.68200684
+Sheffield Utd,15,1920,Sheffield Utd,SheffieldUnited,0,0,0,0,1,9,1623.57434082
+Southampton,16,1920,Southampton,Southampton,0,0,0,0,0,11,1677.79638672
+Tottenham,17,1920,Tottenham,Tottenham,1,0,0,1,0,6,1894.82531738
+Watford,18,1920,Watford,Watford,0,0,0,0,0,19,1689.31970215
+West Ham,19,1920,West Ham,WestHam,0,0,0,0,0,16,1733.45483398
+Wolves,20,1920,Wolves,Wolves,0,1,0,1,0,7,1723.59387207
+Arsenal,1,1819,Arsenal,Arsenal,0,1,0,1,0,5,1823.60009766
+Bournemouth,2,1819,Bournemouth,Bournemouth,0,0,0,0,0,14,1673.37939453
+Brighton,3,1819,Brighton,Brighton,0,0,0,0,0,17,1632.46728516
+Burnley,4,1819,Burnley,Burnley,0,1,0,1,0,15,1691.31921387
+Cardiff,5,1819,Cardiff,Cardiff,0,0,0,0,1,18,1576.0892334
+Chelsea,6,1819,Chelsea,Chelsea,0,1,0,1,0,3,1836.60314941
+Crystal Palace,7,1819,Crystal Palace,CrystalPalace,0,0,0,0,0,12,1692.55053711
+Everton,8,1819,Everton,Everton,0,0,0,0,0,8,1699.16149902
+Fulham,9,1819,Fulham,Fulham,0,0,0,0,1,19,1633.39855957
+Huddersfield,10,1819,Huddersfield,Huddersfield,0,0,0,0,0,20,1566.70019531
+Leicester,11,1819,Leicester,Leicester,0,0,0,0,0,9,1697.0970459
+Liverpool,12,1819,Liverpool,Liverpool,1,0,0,1,0,2,1916.92907715
+Man City,13,1819,Man City,ManCity,1,0,0,1,0,1,1974.56054688
+Man Utd,14,1819,Man Utd,ManUnited,1,0,0,1,0,6,1884.5333252
+Newcastle,15,1819,Newcastle,Newcastle,0,0,0,0,0,13,1670.47021484
+Southampton,16,1819,Southampton,Southampton,0,0,0,0,0,16,1653.09985352
+Tottenham,17,1819,Tottenham,Tottenham,1,0,0,1,0,4,1914.44775391
+Watford,18,1819,Watford,Watford,0,0,0,0,0,11,1626.03417969
+West Ham,19,1819,West Ham,WestHam,0,0,0,0,0,10,1673.33166504
+Wolves,20,1819,Wolves,Wolves,0,0,0,0,1,7,1592.67797852
+Arsenal,1,1718,Arsenal,Arsenal,0,1,0,1,0,6,1848.28649902
+Bournemouth,2,1718,Bournemouth,Bournemouth,0,0,0,0,0,12,1653.75756836
+Brighton,3,1718,Brighton,Brighton,0,0,0,0,1,15,1583.79980469
+Burnley,4,1718,Burnley,Burnley,0,0,0,0,0,7,1628.98840332
+Chelsea,5,1718,Chelsea,Chelsea,1,0,0,1,0,5,1909.3996582
+Crystal Palace,6,1718,Crystal Palace,CrystalPalace,0,0,0,0,0,11,1642.86242676
+Everton,7,1718,Everton,Everton,0,1,0,1,0,8,1751.50134277
+Huddersfield,8,1718,Huddersfield,Huddersfield,0,0,0,0,1,16,1475.79931641
+Leicester,9,1718,Leicester,Leicester,0,0,0,0,0,9,1716.99487305
+Liverpool,10,1718,Liverpool,Liverpool,0,0,0,0,0,4,1837.41552734
+Man City,11,1718,Man City,ManCity,1,0,0,1,0,1,1866.80700684
+Man Utd,12,1718,Man Utd,ManUnited,1,0,0,1,0,2,1857.80200195
+Newcastle,13,1718,Newcastle,Newcastle,0,0,0,0,1,10,1623.17907715
+Southampton,14,1718,Southampton,Southampton,0,0,0,0,0,17,1692.06628418
+Stoke,15,1718,Stoke,Stoke,0,0,0,0,0,19,1662.61376953
+Swansea,16,1718,Swansea,Swansea,0,0,0,0,0,18,1649.37011719
+Tottenham,17,1718,Tottenham,Tottenham,1,0,0,1,0,3,1887.51184082
+Watford,18,1718,Watford,Watford,0,0,0,0,0,14,1603.66809082
+West Brom,19,1718,West Brom,WestBrom,0,0,0,0,0,20,1645.13134766
