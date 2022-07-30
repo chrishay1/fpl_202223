@@ -5,7 +5,10 @@ library(RCurl)
 
 #list of teams and results
 #source for europe flags; https://en.wikipedia.org/wiki/English_football_clubs_in_international_competitions
-#source for premier league tables
+#source for premier league tables; premierleague.com
+#source for club elos ; clubelo.com
+#source for player data; fantasy.premierleague.com. MOst of the data is sourced from an archive.
+#see update_fpl_datanew.r for an example of how this data is scraped
 
 team_names_full <- read_csv("C:/Users/pc/Dropbox/FPLData/team_names.csv")
 team_names_full$Season <- as.character(team_names_full$Season)
@@ -250,7 +253,10 @@ write_csv(player_data_table,"C:/Users/pc/Dropbox/FPLData/player_data_table.csv")
 
 #ok, now create a season-long data set 
 season_start_elos_inp  <- game_dates %>% group_by(team_name,Season) %>% summarise(game_date = min(game_date))
-season_start_elos <- season_start_elos_inp %>% inner_join(game_dates,by=c("team_name","game_date")) %>% select(team_name,Elo)
+season_start_elos <- season_start_elos_inp %>% inner_join(game_date_elos,by=c("team_name","game_date")) %>% select(team_name,Season,team_elo)
 
 View(season_start_elos)
-team_names_w_elo <- team_names_full %>
+team_names_w_elo <- team_names_full %>%inner_join(season_start_elos,by=c("team_name","Season"))
+View(team_names_w_elo)
+
+write_csv(team_names_w_elo,"C:/Users/pc/Dropbox/FPLData/Team data with starting Elo.csv")
