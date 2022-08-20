@@ -8,6 +8,7 @@ library(RCurl)
 #source for premier league tables; premierleague.com
 #source for club elos ; clubelo.com
 #source for player data; fantasy.premierleague.com. MOst of the data is sourced from an archive.
+#source for net worth; transfermarket.co.uk
 #see update_fpl_datanew.r for an example of how this data is scraped
 
 team_names_full <- read_csv("C:/Users/pc/Dropbox/FPLData/team_names.csv")
@@ -113,9 +114,10 @@ apply_lag_data <- function(season_x,meta,team,player) {
     
     
     player_split <- split(player_data_new,player_data_new$newid)
-    y <-player_split[[1]]
+
     
     lag_player_data  <- lapply(player_split,function(y){
+        
         
         temp_data2 <- as.data.frame(matrix(data=NA,nrow=nrow(y),ncol=ncol(y)*2))
         for(i in c(1:length(y))){
@@ -152,20 +154,20 @@ apply_lag_data <- function(season_x,meta,team,player) {
                    transfers_in,transfers_out,transfers_balance,
                    last_five_games_diff,last_game_diff)
         temp_data3 <- vars_to_join %>% inner_join(temp_data2,by=c("round","newid","team_name","opp_name")) %>%
-             select(-(ends_with("0")),
-                       -(ends_with("1")),
-                       -(ends_with("2")),
-                       -(ends_with("3")),
-                       -(ends_with("4")),
-                       -(ends_with("5")),
-                       -(ends_with("6")),
-                       -(ends_with("7")),
-                       -(ends_with("8")),
-                       -(ends_with("9")),
-                       -(contains("transfers")),
-                       -(contains("ea_index")),
-                       -(contains("lag1")))
-    
+            select(-(ends_with("0")),
+                   -(ends_with("1")),
+                   -(ends_with("2")),
+                   -(ends_with("3")),
+                   -(ends_with("4")),
+                   -(ends_with("5")),
+                   -(ends_with("6")),
+                   -(ends_with("7")),
+                   -(ends_with("8")),
+                   -(ends_with("9")),
+                   -(contains("transfers")),
+                   -(contains("ea_index")),
+                   -(contains("lag1")))
+        
         
         return(temp_data3)
     })
@@ -194,9 +196,9 @@ season_vec <- unique(team_names_full$Season)
 player_data_list <- lapply(season_vec,read_data_fn)
 player_data_table <- do.call(bind_rows,player_data_list)  
 #fix team names
-fix_names <- team_names_full %>% select(team_name,fixed_name) %>%rename(team_name_fixed = fixed_name) 
+fix_names <- team_names_full %>% select(team_name,fixed_name) %>%rename(team_name_fixed = fixed_name) %>%unique()
 fix_opps <- team_names_full %>% select(team_name,fixed_name) %>%rename(opp_name = team_name,
-                                                                       opp_name_fixed = fixed_name) 
+                                                                       opp_name_fixed = fixed_name) %>%unique()
 
 player_data_table <- player_data_table %>% inner_join(fix_names,by="team_name") %>%
             inner_join(fix_opps,by="opp_name") %>%select(-team_name,-opp_name) %>%
@@ -204,59 +206,4 @@ player_data_table <- player_data_table %>% inner_join(fix_names,by="team_name") 
 
 write_csv(player_data_table,"C:/Users/pc/Dropbox/FPLData/player_data_table.csv")
 
-#add on ClubElo for each game date
-
-
-unique_teams <- as.data.frame(unique(player_data_table$team_name))
-colnames(unique_teams) = c("team_name")
-
-elo_names <- team_names_full %>% select(fixed_name,Elo_name) %>%rename(team_name = fixed_name) %>%unique()
-
-elo_opp_names <- elo_names %>% rename(Elo_opp_name = Elo_name,opp_name = team_name)
-
-unique_teams <-  unique_teams %>% inner_join(elo_names) %>% mutate(url = (paste0("http://api.clubelo.com/",Elo_name)))
-
- 
-    elos_week_list <- lapply(unique_teams$Elo_name,function(x){
-
-    elos <- read_csv(paste0("C:/Users/pc/Dropbox/FPLData/Elo/",x,".csv")) %>%select(Club,Elo,From,To)
-    })
-
-
-elos_full <- do.call(bind_rows,elos_week_list)
-
-elos_full$Club <- gsub(" ","",elos_full$Club)
-    
-    game_dates <- player_data_table %>% select(Season,team_name,opp_name,game_date) %>% unique() %>%
-                    inner_join(elo_names,by="team_name") %>%inner_join(elo_opp_names,by="opp_name")
-
-team_elos <- elos_full %>%rename(Elo_name = Club, team_elo = Elo)
-
-opp_elos <- elos_full  %>%rename(Elo_opp_name = Club, opponent_elo = Elo)
-
-game_date_elos <- game_dates %>% inner_join(team_elos,by="Elo_name") %>% filter(game_date - days(7) >= From,
-                                                                                game_date - days(7) <= To) %>%
-                    select(-From,-To) %>% inner_join(opp_elos,by="Elo_opp_name") %>%
-                filter(game_date - days(7) >= From,
-                game_date - days(7) <= To) %>%select(-From,-To,-Season)
-
-
-nrow(game_dates)
-nrow(game_date_elos)
-
-colnames(game_date_elos)
-colnames(player_data_table)
-
-player_data_table <- player_data_table %>% inner_join(game_date_elos,by=c("game_date","team_name","opp_name")) %>%
-    select(-Elo_name,-Elo_opp_name)
-write_csv(player_data_table,"C:/Users/pc/Dropbox/FPLData/player_data_table.csv")
-
-#ok, now create a season-long data set 
-season_start_elos_inp  <- game_dates %>% group_by(team_name,Season) %>% summarise(game_date = min(game_date))
-season_start_elos <- season_start_elos_inp %>% inner_join(game_date_elos,by=c("team_name","game_date")) %>% select(team_name,Season,team_elo)
-
-View(season_start_elos)
-team_names_w_elo <- team_names_full %>%inner_join(season_start_elos,by=c("team_name","Season"))
-View(team_names_w_elo)
-
-write_csv(team_names_w_elo,"C:/Users/pc/Dropbox/FPLData/Team data with starting Elo.csv")
+#
